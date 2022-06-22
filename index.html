@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="styles/style.css" />
+        <title>Pasapalabra</title>
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <img
+                    src="styles/pasapalabra logo.svg"
+                    alt="Ben's Pasapalabra"
+                />
+            </div>
+        </header>
+        <div id="game-container">
+            <div id="wheel-container">
+                <div id="countdown-timer">120</div>
+                <div id="a-container" class="letter-container">
+                    <div id="letter-a" class="letter">a</div>
+                </div>
+                <div id="b-container" class="letter-container">
+                    <div id="letter-b" class="letter">b</div>
+                </div>
+                <div id="c-container" class="letter-container">
+                    <div id="letter-c" class="letter">c</div>
+                </div>
+                <div id="d-container" class="letter-container">
+                    <div id="letter-d" class="letter">d</div>
+                </div>
+                <div id="e-container" class="letter-container">
+                    <div id="letter-e" class="letter">e</div>
+                </div>
+                <div id="f-container" class="letter-container">
+                    <div id="letter-f" class="letter">f</div>
+                </div>
+                <div id="g-container" class="letter-container">
+                    <div id="letter-g" class="letter">g</div>
+                </div>
+                <div id="h-container" class="letter-container">
+                    <div id="letter-h" class="letter">h</div>
+                </div>
+                <div id="i-container" class="letter-container">
+                    <div id="letter-i" class="letter">i</div>
+                </div>
+                <div id="j-container" class="letter-container">
+                    <div id="letter-j" class="letter">j</div>
+                </div>
+                <div id="k-container" class="letter-container">
+                    <div id="letter-k" class="letter">k</div>
+                </div>
+                <div id="l-container" class="letter-container">
+                    <div id="letter-l" class="letter">l</div>
+                </div>
+                <div id="m-container" class="letter-container">
+                    <div id="letter-m" class="letter">m</div>
+                </div>
+                <div id="n-container" class="letter-container">
+                    <div id="letter-n" class="letter">n</div>
+                </div>
+                <div id="o-container" class="letter-container">
+                    <div id="letter-o" class="letter">o</div>
+                </div>
+                <div id="p-container" class="letter-container">
+                    <div id="letter-p" class="letter">p</div>
+                </div>
+                <div id="q-container" class="letter-container">
+                    <div id="letter-q" class="letter">q</div>
+                </div>
+                <div id="r-container" class="letter-container">
+                    <div id="letter-r" class="letter">r</div>
+                </div>
+                <div id="s-container" class="letter-container">
+                    <div id="letter-s" class="letter">s</div>
+                </div>
+                <div id="t-container" class="letter-container">
+                    <div id="letter-t" class="letter">t</div>
+                </div>
+                <div id="u-container" class="letter-container">
+                    <div id="letter-u" class="letter">u</div>
+                </div>
+                <div id="v-container" class="letter-container">
+                    <div id="letter-v" class="letter">v</div>
+                </div>
+                <div id="w-container" class="letter-container">
+                    <div id="letter-w" class="letter">w</div>
+                </div>
+                <div id="x-container" class="letter-container">
+                    <div id="letter-x" class="letter">x</div>
+                </div>
+                <div id="y-container" class="letter-container">
+                    <div id="letter-y" class="letter">y</div>
+                </div>
+                <div id="z-container" class="letter-container">
+                    <div id="letter-z" class="letter">z</div>
+                </div>
+            </div>
+            <div id="right-container">
+                <div id="introduction-container">
+                    <div id="game-introduction">
+                        <p id="introduction-text">
+                            <span id="first-line"
+                                >Hey, welcome to Ben's Pasapalabra!</span
+                            >
+                            <br />
+                            <span>
+                                You will have 120 seconds to answer as many
+                                questions as possible. Some questions are
+                                plural, and some require two words.
+                            </span>
+                            <br />
+                            <br />
+                            <span>
+                                You can also use the ENTER key to submit your
+                                answer and TAB to pass.
+                            </span>
+                            <br />
+                            <br />
+                            <span>Are you ready?</span>
+                        </p>
+                    </div>
+                    <select name="question-list" id="question-list">
+                        <option value="">
+                            --Please choose a question list--
+                        </option>
+                        <optgroup label="Pre-Intermediate">
+                            <option value="1">Pre-Intermediate List 1</option>
+                            <option value="2">Pre-Intermediate List 2</option>
+                            <option value="3">Pre-Intermediate List 3</option>
+                        </optgroup>
+                    </select>
+                    <div id="name-and-start-game">
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="Write your name"
+                        />
+                        <button id="start-game" onclick="startGame()">
+                            Start Game
+                        </button>
+                    </div>
+                </div>
+                <div id="questions-container" class="hidden">
+                    <div id="head-container"></div>
+                    <div id="current-question">
+                        With A, which fruit is round and ofter red or green?
+                    </div>
+                    <div id="answer-container">
+                        <input
+                            type="text"
+                            name="answer"
+                            id="answer"
+                            placeholder="Answer"
+                        />
+                        <button id="submit-answer" onclick="submitAnswer()">
+                            Submit
+                        </button>
+                        <button id="pass-answer" onclick="passAnswer()">
+                            Pasapalabra
+                        </button>
+                    </div>
+                </div>
+                <div id="end-container" class="hidden">
+                    <button id="play-again" onclick="playAgain()">
+                        Play again
+                    </button>
+                    <div id="current-score"></div>
+                    <div id="high-scores-container">
+                        <table id="high-scores-table">
+                            <tr>
+                                <td>Player</td>
+                                <td>Correct</td>
+                                <td>Incorrect</td>
+                                <td>Passed</td>
+                            </tr>
+                        </table>
+                        <div id="high-scores"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>

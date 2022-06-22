@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --wheel-dimension: 600px;
+    --letter-dimension: 30px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    :root {
+        --wheel-dimension: 300px;
+        --letter-dimension: 25px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    :root {
+        --wheel-dimension: 350px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    :root {
+        --wheel-dimension: 400px;
+        --letter-dimension: 35px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    :root {
+        --wheel-dimension: 500px;
+        --letter-dimension: 40px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    :root {
+        --wheel-dimension: 600px;
+        --letter-dimension: 45px;
+    }
+}
+
+body {
+    background-color: cornflowerblue;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#wheel-container {
+    width: var(--wheel-dimension);
+    height: var(--wheel-dimension);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    border-radius: 50%;
+    background: radial-gradient(center, blue cornflowerblue);
+    /* box-shadow: 0px 0px 20px 20px blue;
+    border: 1px solid blue; */
+}
+
+#wheel-container .letter-container {
+    --rotation: 0deg;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    transform: rotate(var(--rotation));
+}
+
+.letter-container .letter {
+    height: var(--letter-dimension);
+    width: var(--letter-dimension);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-transform: uppercase;
+    background-color: azure;
+    border: 1px solid black;
+    box-shadow: 0px 0px 3px 3px black;
+    border-radius: 50%;
+    transform: rotate(calc(360deg - var(--rotation)));
+}
+
+#wheel-container #a-container {
+    --rotation: 0deg;
+}
+
+#wheel-container #b-container {
+    --rotation: 13.85deg;
+}
+
+#wheel-container #c-container {
+    --rotation: 27.7deg;
+}
+#wheel-container #d-container {
+    --rotation: 41.55deg;
+}
+#wheel-container #e-container {
+    --rotation: 55.4deg;
+}
+#wheel-container #f-container {
+    --rotation: 69.25deg;
+}
+#wheel-container #g-container {
+    --rotation: 83.1deg;
+}
+#wheel-container #h-container {
+    --rotation: 96.95deg;
+}
+#wheel-container #i-container {
+    --rotation: 110.8deg;
+}
+#wheel-container #j-container {
+    --rotation: 124.65deg;
+}
+#wheel-container #k-container {
+    --rotation: 138.5deg;
+}
+#wheel-container #l-container {
+    --rotation: 152.35deg;
+}
+#wheel-container #m-container {
+    --rotation: 166.2deg;
+}
+#wheel-container #n-container {
+    --rotation: 180.05deg;
+}
+#wheel-container #o-container {
+    --rotation: 193.9deg;
+}
+#wheel-container #p-container {
+    --rotation: 207.75deg;
+}
+#wheel-container #q-container {
+    --rotation: 221.6deg;
+}
+#wheel-container #r-container {
+    --rotation: 235.45deg;
+}
+#wheel-container #s-container {
+    --rotation: 249.3deg;
+}
+#wheel-container #t-container {
+    --rotation: 263.15deg;
+}
+#wheel-container #u-container {
+    --rotation: 277deg;
+}
+#wheel-container #v-container {
+    --rotation: 290.85deg;
+}
+#wheel-container #w-container {
+    --rotation: 304.7deg;
+}
+#wheel-container #x-container {
+    --rotation: 318.55deg;
+}
+#wheel-container #y-container {
+    --rotation: 332.4deg;
+}
+#wheel-container #z-container {
+    --rotation: 346.25deg;
+}
