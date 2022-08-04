@@ -1032,7 +1032,7 @@ const intermediateQuestionSetFour = [
         letter: "d",
         answer: "dig",
         status: 0,
-        question: "With D, what do people do with a space?",
+        question: "With D, what do people do with a spade?",
     },
     {
         letter: "e",
