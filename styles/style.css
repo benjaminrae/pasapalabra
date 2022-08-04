@@ -1,4 +1,4 @@
-* {
+html {
     box-sizing: border-box;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
@@ -11,47 +11,67 @@
     font-size: 24px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 465px) {
     :root {
-        --wheel-dimension: 300px;
-        --letter-dimension: 25px;
+        --wheel-dimension: 250px;
+        --letter-dimension: 20px;
         --scale: 50%;
         --game-container-flex-direction: column-reverse;
         --introduction-display: none;
         --introduction-justify: center;
-        --right-container-margin-left: 0px;
         --game-container-justify-content: center;
+        font-size: 16px;
+    }
+    #game-container {
+        gap: 20px;
+    }
+    #name-and-start-game {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --wheel-dimension: 250px;
+        --letter-dimension: 22px;
+        --scale: 50%;
+        --game-container-flex-direction: column-reverse;
+        --introduction-display: none;
+        --introduction-justify: center;
+        --game-container-justify-content: center;
+        font-size: 16px;
+    }
+    #name-and-start-game {
+        flex-direction: column;
     }
 }
 
 @media only screen and (min-width: 600px) {
     :root {
-        --wheel-dimension: 350px;
+        --wheel-dimension: 300px;
         --scale: 60%;
         --game-container-flex-direction: column-reverse;
         --introduction-display: none;
         --introduction-justify: center;
-        --right-container-margin-left: 0px;
         --game-container-justify-content: center;
     }
 }
 
 @media only screen and (min-width: 768px) {
     :root {
-        --wheel-dimension: 400px;
-        --letter-dimension: 35px;
+        --wheel-dimension: 310px;
+        --letter-dimension: 27px;
         --scale: 70%;
         --game-container-flex-direction: column-reverse;
         --introduction-display: none;
         --introduction-justify: center;
-        --right-container-margin-left: 0px;
         --game-container-justify-content: center;
     }
 }
 
 @media only screen and (min-width: 992px) {
     :root {
-        --wheel-dimension: 500px;
+        --wheel-dimension: 460px;
         --letter-dimension: 40px;
         --scale: 80%;
         --game-container-flex-direction: row;
@@ -64,12 +84,13 @@
 
 @media only screen and (min-width: 1200px) {
     :root {
-        --wheel-dimension: 600px;
+        --wheel-dimension: 560px;
         --letter-dimension: 45px;
         --scale: 100%;
         --game-container-flex-direction: row;
         --introduction-display: flex;
         --introduction-justify: space-around;
+        --introduction-justify: center;
         --right-container-margin-left: 40px;
         --game-container-justify-content: space-around;
         --question-text-size: 32px;
@@ -81,6 +102,14 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+}
+
+#logo-container {
+    padding-top: 20px;
+}
+
+#logo {
+    max-height: 80px;
 }
 
 #game-container {
@@ -259,8 +288,7 @@ body {
 #right-container {
     height: var(--wheel-dimension);
     width: var(--wheel-dimension);
-    margin-left: var(--right-container-margin-left);
-    padding: 20px;
+    padding: 0px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -272,25 +300,30 @@ body {
 
 #introdcution-container {
     width: 90%;
-    /* 700px */
     display: flex;
     flex-direction: column;
     justify-content: var(--introduction-justify);
-    align-content: var(--introduction-justify);
+    align-content: var(--introduction-align);
 }
 
 #game-introduction {
-    width: 90%;
+    width: 100%;
     height: 400px;
     display: var(--introduction-display);
     flex-direction: column;
     justify-content: space-around;
-    align-items: space-around;
+    align-content: center;
+    align-self: flex-start;
 }
 
 #introduction-text {
     letter-spacing: 1px;
     text-align: justify;
+    align-self: stretch;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #first-line {
@@ -301,14 +334,23 @@ body {
     font-size: larger;
 }
 
+#question-list {
+    width: 100%;
+}
+
 #name {
-    width: 260px;
+    width: 300px;
     background-color: gainsboro;
     padding: 15px;
     border-radius: 20px;
     border: 2px solid black;
     font-size: var(--question-text-size);
     margin-top: 30px;
+}
+
+#name-and-start-game {
+    display: flex;
+    justify-content: space-between;
 }
 
 #questions-container {
@@ -454,4 +496,8 @@ th {
 
 td {
     border-top: 0.5px solid black;
+}
+
+strong {
+    font-weight: bolder;
 }

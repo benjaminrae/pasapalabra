@@ -4,15 +4,17 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="styles/reset.css" />
         <link rel="stylesheet" type="text/css" href="styles/style.css" />
         <title>Pasapalabra</title>
     </head>
     <body>
         <header>
-            <div id="logo">
+            <div id="logo-container">
                 <img
                     src="styles/pasapalabra logo.svg"
                     alt="Ben's Pasapalabra"
+                    id="logo"
                 />
             </div>
         </header>
@@ -105,31 +107,42 @@
                             <span id="first-line"
                                 >Hey, welcome to Ben's Pasapalabra!</span
                             >
-                            <br />
+
                             <span>
-                                You will have 120 seconds to answer as many
-                                questions as possible. Some questions are
-                                plural, and some require two words.
+                                You will have <strong>120 seconds</strong> to
+                                answer as many questions as possible. Some
+                                questions are plural, and some require two or
+                                more words.
                             </span>
-                            <br />
-                            <br />
+
                             <span>
-                                You can also use the ENTER key to submit your
-                                answer and TAB to pass.
+                                You can also use the <strong>ENTER</strong> key
+                                to submit your answer and
+                                <strong>TAB</strong> to pass.
                             </span>
-                            <br />
-                            <br />
-                            <span>Are you ready?</span>
+
+                            <span><strong>Are you ready?</strong></span>
                         </p>
                     </div>
                     <select name="question-list" id="question-list">
-                        <option value="">
-                            --Please choose a question list--
-                        </option>
+                        <option value="">--Random Question List--</option>
                         <optgroup label="Pre-Intermediate">
                             <option value="1">Pre-Intermediate List 1</option>
                             <option value="2">Pre-Intermediate List 2</option>
                             <option value="3">Pre-Intermediate List 3</option>
+                        </optgroup>
+                        <optgroup label="Intermediate">
+                            <option value="4">Intermediate List 1</option>
+                            <option value="5">Intermediate List 2</option>
+                            <option value="6">Intermediate List 3</option>
+                            <option value="7">Intermediate List 4</option>
+                        </optgroup>
+                        <optgroup label="Upper-Intermediate">
+                            <option value="8">Upper-Intermediate List 1</option>
+                            <option value="9">Upper-Intermediate List 2</option>
+                            <option value="10">
+                                Upper-Intermediate List 3
+                            </option>
                         </optgroup>
                     </select>
                     <div id="name-and-start-game">
@@ -138,13 +151,13 @@
                             name="name"
                             id="name"
                             placeholder="Write your name"
+                            autofocus
                         />
-                        <button id="start-game" onclick="startGame()">
-                            Start Game
-                        </button>
+                        <button id="start-game">Start Game</button>
                     </div>
                 </div>
                 <div id="questions-container" class="hidden">
+                    <div id="questions-container__feedback-container"></div>
                     <div id="head-container"></div>
                     <div id="current-question">
                         With A, which fruit is round and ofter red or green?
@@ -156,18 +169,12 @@
                             id="answer"
                             placeholder="Answer"
                         />
-                        <button id="submit-answer" onclick="submitAnswer()">
-                            Submit
-                        </button>
-                        <button id="pass-answer" onclick="passAnswer()">
-                            Pasapalabra
-                        </button>
+                        <button id="submit-answer">Submit</button>
+                        <button id="pass-answer">Pasapalabra</button>
                     </div>
                 </div>
                 <div id="end-container" class="hidden">
-                    <button id="play-again" onclick="playAgain()">
-                        Play again
-                    </button>
+                    <button id="play-again">Play again</button>
                     <div id="current-score"></div>
                     <div id="high-scores-container">
                         <table id="high-scores-table">
@@ -183,6 +190,7 @@
                 </div>
             </div>
         </div>
-        <script src="main.js"></script>
+        <script type="module" src="main.js"></script>
+        <script type="module" src="/modules/questions.js"></script>
     </body>
 </html>
