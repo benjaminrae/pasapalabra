@@ -263,7 +263,11 @@ const nextQuestionIndex = () => {
     if (statusArray.indexOf(0) === -1 && statusArray.indexOf(3) === -1) {
         questionsAnsweredEndGame();
     } else if (statusArray.indexOf(0) === -1) {
-        return statusArray.indexOf(3);
+        return statusArray.indexOf(
+            3,
+            currentQuestionIndex < statusArray.length - 1 &&
+                currentQuestionIndex + 1
+        );
     } else {
         return statusArray.indexOf(0);
     }
