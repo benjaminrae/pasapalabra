@@ -144,6 +144,8 @@ body {
     display: grid;
     justify-content: center;
     transform: rotate(var(--rotation));
+    animation: spinOutFromCenter 2s ease-in-out;
+    animation-delay: 10ms;
 }
 
 .letter-container .letter {
@@ -163,6 +165,28 @@ body {
     text-shadow: 2px 2px 5px white;
     border-radius: 50%;
     transform: rotate(calc(360deg - var(--rotation)));
+    animation: spinLetter 1s ease-in-out;
+    animation-delay: 10ms;
+}
+
+@keyframes spinLetter {
+    0% {
+        transform: rotate(-360deg);
+    }
+    100% {
+        transform: rotate(calc(360deg - var(--rotation)));
+    }
+}
+
+@keyframes spinOutFromCenter {
+    0% {
+        height: 75%;
+        transform: rotate(-360deg);
+    }
+    100% {
+        height: 100%;
+        transform: rotate(var(--rotation));
+    }
 }
 
 #countdown-timer {
